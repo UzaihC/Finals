@@ -15,6 +15,7 @@ namespace Finals
         private void button2_Click(object sender, EventArgs e)
         {
             string EmailL = LogEmail.Text;
+
             string PassL = LogPass.Text;
             Classconnection conn = new Classconnection();
             if (conn.ValidateLogin(EmailL, PassL))

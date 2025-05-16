@@ -11,13 +11,15 @@ using System.Windows.Forms;
 
 namespace Finals
 {
+
+    
     public partial class Form3 : Form
-    {
+    { 
         public Form3()
         {
             InitializeComponent();
         }
-
+        Classconnection connect = new Classconnection();
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
@@ -55,8 +57,8 @@ namespace Finals
         }
         public void LoadDonorData()
         {
-            string connString = "server=localhost;user=root;database=login;SslMode=None;";
-            using (MySqlConnection conn = new MySqlConnection(connString))
+           
+            using (MySqlConnection conn = new MySqlConnection(connect.GetConnectionString()))
             {
                 conn.Open();
                 string query = "SELECT donor, amount, recipient, donation_date FROM donations";
@@ -68,26 +70,77 @@ namespace Finals
 
 
         }
-        private void SearchDonor(string donorName)
+        private void SearchDonor(string donor)
         {
-            string connStr = "server=localhost;user=root;database=login;SslMode=None;";
-            using (MySqlConnection conn = new MySqlConnection(connStr))
+            try
             {
-                conn.Open();
-                string query = "SELECT * FROM donations WHERE donor LIKE @donor";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@donor", "%" + donorName + "%");
+                using (MySqlConnection conn = new MySqlConnection(connect.GetConnectionString()))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM donations WHERE donor = @donor";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        MessageBox.Show("Connected");
+                        cmd.Parameters.AddWithValue("@donor", donor);
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                DATA.DataSource = dt;
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        DATA.DataSource = dt;
+                    }
+;
+
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            SearchDonor(TextSearch.Text);
+            //SearchDonor(TextSearch.Text);
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form4 donationForm = new Form4();
+            donationForm.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Profile profile1 = new Profile("donorName");
+
+            profile1.Show();
+        }
+
+        private void DATA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            about about1 = new about();
+            about1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
+        }
+
     }
 }

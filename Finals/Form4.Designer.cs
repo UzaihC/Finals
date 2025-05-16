@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             button2 = new Button();
             button1 = new Button();
             label1 = new Label();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,9 +44,9 @@
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(20, 24);
+            panel1.Location = new Point(20, 40);
             panel1.Name = "panel1";
-            panel1.Size = new Size(466, 544);
+            panel1.Size = new Size(466, 528);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -81,11 +84,24 @@
             label1.Text = "WELCOM TO LEVELING CORP";
             label1.Click += label1_Click;
             // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges1;
+            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(452, 5);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ControlBox1.Size = new Size(45, 29);
+            guna2ControlBox1.TabIndex = 1;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(506, 597);
+            Controls.Add(guna2ControlBox1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form4";
@@ -103,5 +119,6 @@
         private Label label1;
         private Button button2;
         private Button button1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }

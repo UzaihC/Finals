@@ -40,7 +40,7 @@ namespace Finals
             string recipient = textBox3.Text;
             DateTime donationDate = DateTime.Now;
 
-            string connString = "server=localhost;user=root;database=login;";
+            string connString = "server=localhost;user=root;database=loglog;";
 
             using (MySqlConnection conn = new MySqlConnection(connString))
             {
@@ -62,6 +62,7 @@ namespace Finals
             donationForm.Show();
             this.Hide();
             MessageBox.Show("THANK YOU FOR DONATING!!!");
+
 
         }
 
@@ -86,5 +87,6 @@ namespace Finals
         {
 
         }
+
     }
 }

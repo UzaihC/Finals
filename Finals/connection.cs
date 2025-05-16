@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data;
+using System.Windows.Forms;
+using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
 
 namespace Finals
@@ -7,7 +10,7 @@ namespace Finals
         class Classconnection
         {
             private string server = "localhost";
-            private string database = "login";
+            private string database = "loglog";
             private string username = "root";
             private string password = "";
             private string connString;
@@ -17,7 +20,12 @@ namespace Finals
                 connString = $"Server={server};Database={database};User ID ={username};Password={password};";
             }
 
-            public void InsertData(string Username, string Password)
+        public string GetConnectionString()
+        {
+            return connString;
+        }
+
+        public void InsertData(string Username, string Password)
             {
                 using (MySqlConnection conn = new MySqlConnection(connString))
                 {
@@ -87,6 +95,7 @@ namespace Finals
                 return false;
             }
         }
+        
 
     }
     

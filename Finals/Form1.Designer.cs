@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label1 = new Label();
-            button1 = new Button();
             button2 = new Button();
             LogEmail = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
@@ -47,6 +48,7 @@
             LogPass = new Guna.UI2.WinForms.Guna2TextBox();
             label3 = new Label();
             label5 = new Label();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -54,8 +56,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(guna2ControlBox1);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -73,20 +75,6 @@
             label1.TabIndex = 3;
             label1.Text = "Leveling Corp.";
             // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ActiveCaptionText;
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.Dock = DockStyle.Right;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(819, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(35, 43);
-            button1.TabIndex = 0;
-            button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             button2.BackgroundImage = Properties.Resources.pngtree_youth_geometric_gradient_architectural_silhouette_inspirational_picture_image_976352;
@@ -100,7 +88,7 @@
             // 
             // LogEmail
             // 
-            LogEmail.CustomizableEdges = customizableEdges1;
+            LogEmail.CustomizableEdges = customizableEdges7;
             LogEmail.DefaultText = "";
             LogEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             LogEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -113,7 +101,7 @@
             LogEmail.Name = "LogEmail";
             LogEmail.PlaceholderText = "";
             LogEmail.SelectedText = "";
-            LogEmail.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            LogEmail.ShadowDecoration.CustomizableEdges = customizableEdges8;
             LogEmail.Size = new Size(329, 29);
             LogEmail.TabIndex = 2;
             LogEmail.TextChanged += LogEmail_TextChanged;
@@ -201,7 +189,7 @@
             // 
             // LogPass
             // 
-            LogPass.CustomizableEdges = customizableEdges3;
+            LogPass.CustomizableEdges = customizableEdges9;
             LogPass.DefaultText = "";
             LogPass.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             LogPass.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -214,7 +202,7 @@
             LogPass.Name = "LogPass";
             LogPass.PlaceholderText = "";
             LogPass.SelectedText = "";
-            LogPass.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            LogPass.ShadowDecoration.CustomizableEdges = customizableEdges10;
             LogPass.Size = new Size(329, 29);
             LogPass.TabIndex = 6;
             // 
@@ -239,6 +227,18 @@
             label5.TabIndex = 5;
             label5.Text = "WELCOME TO LEVELING CORP.\r\n";
             label5.Click += label5_Click;
+            // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges5;
+            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(806, 3);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2ControlBox1.Size = new Size(45, 29);
+            guna2ControlBox1.TabIndex = 4;
             // 
             // Form1
             // 
@@ -267,7 +267,6 @@
         #endregion
 
         private Panel panel1;
-        private Button button1;
         private Label label1;
         private Button button2;
         private Guna.UI2.WinForms.Guna2TextBox LogEmail;
@@ -280,5 +279,6 @@
         private CheckBox checkBox1;
         private Label label5;
         private LinkLabel linkLabel1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }
