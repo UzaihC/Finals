@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
-            panel3 = new Panel();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panel2 = new Panel();
-            checkBox1 = new CheckBox();
+            showPass2 = new CheckBox();
             label4 = new Label();
             label2 = new Label();
             PassW = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,22 +53,24 @@
             // 
             panel1.AllowDrop = true;
             panel1.BackColor = SystemColors.ActiveCaptionText;
-            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(guna2ControlBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(817, 67);
             panel1.TabIndex = 0;
             // 
-            // panel3
+            // guna2ControlBox1
             // 
-            panel3.BackgroundImage = Properties.Resources.images;
-            panel3.BackgroundImageLayout = ImageLayout.Stretch;
-            panel3.Location = new Point(771, 12);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(34, 32);
-            panel3.TabIndex = 0;
-            panel3.Paint += panel3_Paint;
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges1;
+            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(760, 21);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ControlBox1.Size = new Size(45, 29);
+            guna2ControlBox1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -74,7 +78,7 @@
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Controls.Add(checkBox1);
+            panel2.Controls.Add(showPass2);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(PassW);
@@ -87,22 +91,23 @@
             panel2.TabIndex = 5;
             panel2.Paint += panel2_Paint;
             // 
-            // checkBox1
+            // showPass2
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = SystemColors.ButtonFace;
-            checkBox1.Location = new Point(48, 250);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(125, 19);
-            checkBox1.TabIndex = 8;
-            checkBox1.Text = "SHOW PASSWORD";
-            checkBox1.UseVisualStyleBackColor = false;
+            showPass2.AutoSize = true;
+            showPass2.BackColor = SystemColors.ButtonFace;
+            showPass2.Location = new Point(37, 204);
+            showPass2.Name = "showPass2";
+            showPass2.Size = new Size(125, 19);
+            showPass2.TabIndex = 8;
+            showPass2.Text = "SHOW PASSWORD";
+            showPass2.UseVisualStyleBackColor = false;
+            showPass2.CheckedChanged += showPass2_CheckedChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.InactiveBorder;
-            label4.Location = new Point(46, 195);
+            label4.Location = new Point(35, 149);
             label4.Name = "label4";
             label4.Size = new Size(57, 15);
             label4.TabIndex = 7;
@@ -122,7 +127,7 @@
             // 
             // PassW
             // 
-            PassW.CustomizableEdges = customizableEdges1;
+            PassW.CustomizableEdges = customizableEdges3;
             PassW.DefaultText = "";
             PassW.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             PassW.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -131,19 +136,20 @@
             PassW.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             PassW.Font = new Font("Segoe UI", 9F);
             PassW.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            PassW.Location = new Point(46, 213);
+            PassW.Location = new Point(35, 167);
             PassW.Name = "PassW";
             PassW.PlaceholderText = "";
             PassW.SelectedText = "";
-            PassW.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            PassW.ShadowDecoration.CustomizableEdges = customizableEdges4;
             PassW.Size = new Size(329, 29);
             PassW.TabIndex = 6;
+            PassW.UseSystemPasswordChar = true;
             PassW.TextChanged += PassW_TextChanged;
             // 
             // button2
             // 
             button2.BackgroundImage = Properties.Resources.pngtree_youth_geometric_gradient_architectural_silhouette_inspirational_picture_image_976352;
-            button2.Location = new Point(91, 295);
+            button2.Location = new Point(80, 249);
             button2.Name = "button2";
             button2.Size = new Size(226, 47);
             button2.TabIndex = 1;
@@ -155,7 +161,7 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Control;
-            label3.Location = new Point(46, 134);
+            label3.Location = new Point(35, 88);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 5;
@@ -163,7 +169,7 @@
             // 
             // EmailT
             // 
-            EmailT.CustomizableEdges = customizableEdges3;
+            EmailT.CustomizableEdges = customizableEdges5;
             EmailT.DefaultText = "";
             EmailT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             EmailT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -172,11 +178,11 @@
             EmailT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             EmailT.Font = new Font("Segoe UI", 9F);
             EmailT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            EmailT.Location = new Point(46, 152);
+            EmailT.Location = new Point(35, 106);
             EmailT.Name = "EmailT";
             EmailT.PlaceholderText = "";
             EmailT.SelectedText = "";
-            EmailT.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            EmailT.ShadowDecoration.CustomizableEdges = customizableEdges6;
             EmailT.Size = new Size(329, 29);
             EmailT.TabIndex = 2;
             EmailT.TextChanged += EmailT_TextChanged;
@@ -190,6 +196,7 @@
             ClientSize = new Size(817, 674);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
             Text = "Form2";
             Load += Form2_Load;
@@ -209,7 +216,7 @@
         private Button button2;
         private Label label3;
         private Guna.UI2.WinForms.Guna2TextBox EmailT;
-        private CheckBox checkBox1;
-        private Panel panel3;
+        private CheckBox showPass2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }

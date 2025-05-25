@@ -1,4 +1,5 @@
-﻿namespace Finals
+﻿
+namespace Finals
 {
     partial class Form1
     {
@@ -28,27 +29,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             label1 = new Label();
             button2 = new Button();
-            LogEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            LogUser = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
             panel2 = new Panel();
             linkLabel1 = new LinkLabel();
-            checkBox1 = new CheckBox();
+            showPass = new CheckBox();
             linkLabel2 = new LinkLabel();
             label4 = new Label();
             LogPass = new Guna.UI2.WinForms.Guna2TextBox();
             label3 = new Label();
             label5 = new Label();
-            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -64,6 +65,18 @@
             panel1.Size = new Size(854, 43);
             panel1.TabIndex = 0;
             // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges1;
+            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(806, 3);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ControlBox1.Size = new Size(45, 29);
+            guna2ControlBox1.TabIndex = 4;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -78,7 +91,7 @@
             // button2
             // 
             button2.BackgroundImage = Properties.Resources.pngtree_youth_geometric_gradient_architectural_silhouette_inspirational_picture_image_976352;
-            button2.Location = new Point(91, 295);
+            button2.Location = new Point(87, 258);
             button2.Name = "button2";
             button2.Size = new Size(226, 47);
             button2.TabIndex = 1;
@@ -86,25 +99,25 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // LogEmail
+            // LogUser
             // 
-            LogEmail.CustomizableEdges = customizableEdges7;
-            LogEmail.DefaultText = "";
-            LogEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            LogEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            LogEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            LogEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            LogEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            LogEmail.Font = new Font("Segoe UI", 9F);
-            LogEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            LogEmail.Location = new Point(39, 113);
-            LogEmail.Name = "LogEmail";
-            LogEmail.PlaceholderText = "";
-            LogEmail.SelectedText = "";
-            LogEmail.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            LogEmail.Size = new Size(329, 29);
-            LogEmail.TabIndex = 2;
-            LogEmail.TextChanged += LogEmail_TextChanged;
+            LogUser.CustomizableEdges = customizableEdges3;
+            LogUser.DefaultText = "";
+            LogUser.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            LogUser.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            LogUser.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            LogUser.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            LogUser.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            LogUser.Font = new Font("Segoe UI", 9F);
+            LogUser.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            LogUser.Location = new Point(31, 121);
+            LogUser.Name = "LogUser";
+            LogUser.PlaceholderText = "";
+            LogUser.SelectedText = "";
+            LogUser.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            LogUser.Size = new Size(329, 29);
+            LogUser.TabIndex = 2;
+            LogUser.TextChanged += LogEmail_TextChanged;
             // 
             // label2
             // 
@@ -125,19 +138,18 @@
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(linkLabel1);
-            panel2.Controls.Add(checkBox1);
+            panel2.Controls.Add(showPass);
             panel2.Controls.Add(linkLabel2);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(LogPass);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(LogEmail);
+            panel2.Controls.Add(LogUser);
             panel2.Location = new Point(12, 105);
             panel2.Name = "panel2";
             panel2.Size = new Size(406, 477);
             panel2.TabIndex = 4;
-            panel2.Paint += panel2_Paint;
             // 
             // linkLabel1
             // 
@@ -145,7 +157,7 @@
             linkLabel1.AutoSize = true;
             linkLabel1.BackColor = Color.Transparent;
             linkLabel1.LinkColor = Color.Red;
-            linkLabel1.Location = new Point(273, 209);
+            linkLabel1.Location = new Point(265, 217);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(95, 15);
             linkLabel1.TabIndex = 11;
@@ -153,23 +165,23 @@
             linkLabel1.Text = "Forgot Password";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // checkBox1
+            // showPass
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Transparent;
-            checkBox1.Location = new Point(39, 209);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(108, 19);
-            checkBox1.TabIndex = 10;
-            checkBox1.Text = "Show Password";
-            checkBox1.UseVisualStyleBackColor = false;
+            showPass.AutoSize = true;
+            showPass.BackColor = Color.Transparent;
+            showPass.Location = new Point(31, 217);
+            showPass.Name = "showPass";
+            showPass.Size = new Size(108, 19);
+            showPass.TabIndex = 10;
+            showPass.Text = "Show Password";
+            showPass.UseVisualStyleBackColor = false;
             // 
             // linkLabel2
             // 
             linkLabel2.AutoSize = true;
             linkLabel2.BackColor = SystemColors.Control;
             linkLabel2.LinkColor = SystemColors.ActiveCaptionText;
-            linkLabel2.Location = new Point(144, 360);
+            linkLabel2.Location = new Point(140, 323);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(116, 15);
             linkLabel2.TabIndex = 9;
@@ -181,7 +193,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.InactiveBorder;
-            label4.Location = new Point(39, 156);
+            label4.Location = new Point(31, 164);
             label4.Name = "label4";
             label4.Size = new Size(57, 15);
             label4.TabIndex = 7;
@@ -189,7 +201,7 @@
             // 
             // LogPass
             // 
-            LogPass.CustomizableEdges = customizableEdges9;
+            LogPass.CustomizableEdges = customizableEdges5;
             LogPass.DefaultText = "";
             LogPass.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             LogPass.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -198,19 +210,21 @@
             LogPass.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             LogPass.Font = new Font("Segoe UI", 9F);
             LogPass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            LogPass.Location = new Point(39, 174);
+            LogPass.Location = new Point(31, 182);
             LogPass.Name = "LogPass";
             LogPass.PlaceholderText = "";
             LogPass.SelectedText = "";
-            LogPass.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            LogPass.ShadowDecoration.CustomizableEdges = customizableEdges6;
             LogPass.Size = new Size(329, 29);
             LogPass.TabIndex = 6;
+            LogPass.UseSystemPasswordChar = true;
+            LogPass.TextChanged += LogPass_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Control;
-            label3.Location = new Point(39, 95);
+            label3.Location = new Point(31, 103);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 5;
@@ -227,18 +241,6 @@
             label5.TabIndex = 5;
             label5.Text = "WELCOME TO LEVELING CORP.\r\n";
             label5.Click += label5_Click;
-            // 
-            // guna2ControlBox1
-            // 
-            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.CustomizableEdges = customizableEdges5;
-            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
-            guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(806, 3);
-            guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ControlBox1.Size = new Size(45, 29);
-            guna2ControlBox1.TabIndex = 4;
             // 
             // Form1
             // 
@@ -269,14 +271,14 @@
         private Panel panel1;
         private Label label1;
         private Button button2;
-        private Guna.UI2.WinForms.Guna2TextBox LogEmail;
+        private Guna.UI2.WinForms.Guna2TextBox LogUser;
         private Label label2;
         private Panel panel2;
         private Label label4;
         private Guna.UI2.WinForms.Guna2TextBox LogPass;
         private Label label3;
         private LinkLabel linkLabel2;
-        private CheckBox checkBox1;
+        private CheckBox showPass;
         private Label label5;
         private LinkLabel linkLabel1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;

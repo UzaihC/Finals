@@ -3,22 +3,23 @@ using System.Data;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 
 namespace Finals
 
 {
-        class Classconnection
-        {
-            private string server = "localhost";
-            private string database = "loglog";
-            private string username = "root";
-            private string password = "";
-            private string connString;
+    class Classconnection
+    {
+        private string server = "localhost";
+        private string database = "loglog";
+        private string username = "root";
+        private string password = "";
+        private string connString;
 
-            public Classconnection()
-            {
-                connString = $"Server={server};Database={database};User ID ={username};Password={password};";
-            }
+        public Classconnection()
+        {
+            connString = $"Server={server};Database={database};User ID ={username};Password={password};";
+        }
 
         public string GetConnectionString()
         {
@@ -26,30 +27,30 @@ namespace Finals
         }
 
         public void InsertData(string Username, string Password)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connString))
             {
-                using (MySqlConnection conn = new MySqlConnection(connString))
+                try
                 {
-                    try
+                    conn.Open();
+                    string query ="INSERT INTO registeredusers(Username, Password) VALUES(@Username, @Password)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        conn.Open();
-                        string query = "INSERT INTO registeredusers (Username, Password) VALUES (@username, @password)";
-                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@username", Username);
-                            cmd.Parameters.AddWithValue("@password", Password);
-                            int rowsAffected = cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@Username", Username);
+                        cmd.Parameters.AddWithValue("@Password", Password);
+                        int rowsAffected = cmd.ExecuteNonQuery();
 
-                            MessageBox.Show(rowsAffected > 0 ? "Data inserted successfully!!!" : "Failed to insert data.");
-                        }
+                        MessageBox.Show(rowsAffected > 0 ? "Data inserted successfully!!!" : "Failed to insert data.");
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
-
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
                 }
 
             }
+
+        }
         public bool ValidateLogin(string Username, string Password)
         {
             try
@@ -95,9 +96,24 @@ namespace Finals
                 return false;
             }
         }
-        
+        public bool UpdatePassword(string Username, string newPassword)
+        {
+            using (MySqlConnection conn = new MySqlConnection(GetConnectionString()))
+            {
+                conn.Open();
+                string query = "UPDATE registeredusers SET Password = @password WHERE Username = @Username";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Password", newPassword);
+                    cmd.Parameters.AddWithValue("@Username", Username);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+        }
+
 
     }
-    
 }
 

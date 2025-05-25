@@ -83,11 +83,10 @@
             // 
             // label3
             // 
-            label3.AutoSize = true;
             label3.Font = new Font("OCR A Extended", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(3, 99);
+            label3.Location = new Point(12, 99);
             label3.Name = "label3";
-            label3.Size = new Size(602, 169);
+            label3.Size = new Size(603, 389);
             label3.TabIndex = 3;
             label3.Text = resources.GetString("label3.Text");
             label3.Click += label3_Click;
@@ -107,7 +106,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(605, 303);
+            ClientSize = new Size(640, 527);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label2);

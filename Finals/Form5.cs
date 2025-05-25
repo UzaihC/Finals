@@ -13,29 +13,20 @@ namespace Finals
 {
     public partial class Form5 : Form
     {
-        public Form5()
+        private string currentUsername;
+        public Form5(string currentUsername)
         {
             InitializeComponent();
+            this.currentUsername = currentUsername;
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Form5_Load(object sender, EventArgs e)
         {
-
+            textBox1.Text = currentUsername;
+            textBox1.ReadOnly = true;
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            string donor = textBox1.Text;
+            string donor = currentUsername;
             string amount = textBox2.Text;
             string recipient = textBox3.Text;
             DateTime donationDate = DateTime.Now;
@@ -58,12 +49,10 @@ namespace Finals
 
 
 
-            Form3 donationForm = new Form3();
+            MessageBox.Show("THANK YOU FOR DONATING!!!");
+            Form3 donationForm = new Form3(currentUsername);
             donationForm.Show();
             this.Hide();
-            MessageBox.Show("THANK YOU FOR DONATING!!!");
-
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -83,10 +72,9 @@ namespace Finals
             this.Hide();
         }
 
-        private void Form5_Load(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
     }
 }

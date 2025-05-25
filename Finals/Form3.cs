@@ -12,12 +12,14 @@ using System.Windows.Forms;
 namespace Finals
 {
 
-    
+
     public partial class Form3 : Form
-    { 
-        public Form3()
+    {
+        private string currentUsername;
+        public Form3(string username)
         {
             InitializeComponent();
+            currentUsername = username;
         }
         Classconnection connect = new Classconnection();
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace Finals
         }
         public void LoadDonorData()
         {
-           
+
             using (MySqlConnection conn = new MySqlConnection(connect.GetConnectionString()))
             {
                 conn.Open();
@@ -67,42 +69,56 @@ namespace Finals
                 adapter.Fill(table);
                 DATA.DataSource = table;
             }
-
-
+            SetupAutoComplete();
         }
-        private void SearchDonor(string donor)
+
+        private void SetupAutoComplete()
         {
-            try
+            AutoCompleteStringCollection autoCompleteData = new AutoCompleteStringCollection();
+
+            using (MySqlConnection conn = new MySqlConnection(connect.GetConnectionString()))
             {
-                using (MySqlConnection conn = new MySqlConnection(connect.GetConnectionString()))
+                conn.Open();
+                string query = "SELECT DISTINCT donor FROM donations UNION SELECT DISTINCT recipient FROM donations";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    conn.Open();
-                    string query = "SELECT * FROM donations WHERE donor = @donor";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        MessageBox.Show("Connected");
-                        cmd.Parameters.AddWithValue("@donor", donor);
-
-                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        DATA.DataSource = dt;
+                        while (reader.Read())
+                        {
+                            autoCompleteData.Add(reader.GetString(0));
+                        }
                     }
-;
-
                 }
-            }catch(Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
             }
 
+            textBoxSearch.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBoxSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBoxSearch.AutoCompleteCustomSource = autoCompleteData;
+            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            //SearchDonor(TextSearch.Text);
-        }
+            string searchText = textBoxSearch.Text.Trim();
 
+            using (MySqlConnection conn = new MySqlConnection(connect.GetConnectionString()))
+            {
+                conn.Open();
+                string query = @"SELECT donor, amount, recipient, donation_date FROM donations WHERE donor LIKE @search OR recipient LIKE @search";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@search", "%" + searchText + "%");
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    DATA.DataSource = dt;
+                }
+            }
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
             Form4 donationForm = new Form4();
@@ -117,10 +133,9 @@ namespace Finals
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Profile profile1 = new Profile("donorName");
-
+            Profile profile1 = new Profile(currentUsername);
             profile1.Show();
+            this.Hide();
         }
 
         private void DATA_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -142,5 +157,17 @@ namespace Finals
             form1.Show();
         }
 
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Form4 optionform = new Form4();
+            optionform.Show();
+            this.Hide();
+
+        }
+
+        private void DATA_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

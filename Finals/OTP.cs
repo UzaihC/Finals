@@ -1,85 +1,68 @@
-﻿using Mysqlx.Expr;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Finals
 {
     public partial class OTP : Form
     {
-
         public OTP()
         {
             InitializeComponent();
         }
-        private static Dictionary<string, (string otp, DateTime expiry)> otpStorage = new Dictionary<string, (string otp, DateTime expiry)>();
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            string email = emailbox.Text;
+            string username = emailbox.Text;
             string userOTP = otpbox.Text;
-            string? otp = otpStorage.ContainsKey(email) ? otpStorage[email].otp : null;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userOTP))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(userOTP))
             {
                 MessageBox.Show("Please enter both email and OTP.");
                 return;
             }
-            else if (otp == null)
+
+            var otpRecord = OTPs.GetStoredOtp(username);
+
+            if (otpRecord == null)
             {
                 MessageBox.Show("No OTP generated for this email.");
                 return;
             }
-            else if (otpStorage[email].expiry < DateTime.Now)
+
+            string storedOtp = otpRecord.Value.otp;
+            DateTime expiry = otpRecord.Value.expiry;
+
+            if (expiry < DateTime.Now)
             {
                 MessageBox.Show("OTP has expired.");
                 return;
             }
-            else if (userOTP == otp)
+
+            if (userOTP == storedOtp)
             {
                 MessageBox.Show("OTP verified successfully.");
                 this.Hide();
-                Password Password = new Password();
-                Password.Show();
+                Password passwordForm = new Password(username);
+                passwordForm.Show();
             }
             else
             {
                 MessageBox.Show("Invalid OTP. Please try again.");
             }
-
-
-
         }
 
         private void send_Click(object sender, EventArgs e)
         {
             string email = emailbox.Text;
-            string otp = Finals.OTPs.GenerateOTP();
+            string otp = OTPs.GenerateOTP();
             DateTime expiry = DateTime.Now.AddMinutes(5);
 
-
-            otpStorage[email] = (otp, expiry);
+            OTPs.StoreOtp(email, otp, expiry);
 
             Email send = new Email();
             send.SendEmail(email, otp);
-        }
-
-        private void otpbox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

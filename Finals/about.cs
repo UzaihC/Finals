@@ -25,7 +25,7 @@ namespace Finals
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form3 form3 = new Form3();
+            Form3 form3 = new Form3(Session.currentUsername);
             form3.Show();
         }
 

@@ -24,14 +24,14 @@ namespace Finals
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 dashboardForm = new Form3();
+            Form3 dashboardForm = new Form3(Session.currentUsername);
             dashboardForm.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form5 donationForm = new Form5();
+            Form5 donationForm = new Form5(Session.currentUsername);
             donationForm.Show();
             this.Hide();
         }

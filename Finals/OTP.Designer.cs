@@ -57,6 +57,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(556, 548);
             panel1.TabIndex = 0;
+            //panel1.Paint += panel1_Paint;
             // 
             // send
             // 
@@ -112,7 +113,7 @@
             otpbox.Name = "otpbox";
             otpbox.Size = new Size(156, 23);
             otpbox.TabIndex = 2;
-            otpbox.TextChanged += otpbox_TextChanged;
+            //otpbox.TextChanged += otpbox_TextChanged;
             // 
             // emailbox
             // 
@@ -120,7 +121,7 @@
             emailbox.Name = "emailbox";
             emailbox.Size = new Size(456, 23);
             emailbox.TabIndex = 1;
-            emailbox.TextChanged += textBox1_TextChanged;
+            //emailbox.TextChanged += textBox1_TextChanged;
             // 
             // panel2
             // 

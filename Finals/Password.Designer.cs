@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button3 = new Button();
-            button2 = new Button();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
             button1 = new Button();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txtConfirmPassword = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtNewPassword = new TextBox();
             panel2 = new Panel();
             label1 = new Label();
             panel1.SuspendLayout();
@@ -45,49 +45,52 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlLightLight;
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(checkBox2);
+            panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(txtConfirmPassword);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtNewPassword);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(15, 21);
             panel1.Name = "panel1";
             panel1.Size = new Size(534, 566);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
-            // button3
+            // checkBox2
             // 
-            button3.BackColor = Color.OrangeRed;
-            button3.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.ActiveCaptionText;
-            button3.Location = new Point(155, 344);
-            button3.Name = "button3";
-            button3.Size = new Size(164, 42);
-            button3.TabIndex = 10;
-            button3.Text = "CONTINUE";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(41, 249);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(83, 19);
+            checkBox2.TabIndex = 12;
+            checkBox2.Text = "checkBox2";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // checkBox1
             // 
-            button2.Location = new Point(33, 249);
-            button2.Name = "button2";
-            button2.Size = new Size(137, 27);
-            button2.TabIndex = 9;
-            button2.Text = "Show Password";
-            button2.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(41, 170);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(83, 19);
+            checkBox1.TabIndex = 11;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new Point(34, 170);
+            button1.BackColor = Color.OrangeRed;
+            button1.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(33, 406);
             button1.Name = "button1";
-            button1.Size = new Size(137, 27);
-            button1.TabIndex = 8;
-            button1.Text = "Show Password";
-            button1.UseVisualStyleBackColor = true;
+            button1.Size = new Size(164, 42);
+            button1.TabIndex = 10;
+            button1.Text = "CONTINUE";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button3_Click;
             // 
             // label3
             // 
@@ -99,12 +102,14 @@
             label3.TabIndex = 7;
             label3.Text = "Confirm New Password";
             // 
-            // textBox2
+            // txtConfirmPassword
             // 
-            textBox2.Location = new Point(33, 220);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(456, 23);
-            textBox2.TabIndex = 6;
+            txtConfirmPassword.Location = new Point(33, 220);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.Size = new Size(456, 23);
+            txtConfirmPassword.TabIndex = 6;
+            txtConfirmPassword.UseSystemPasswordChar = true;
+            txtConfirmPassword.TextChanged += txtConfirmPassword_TextChanged;
             // 
             // label2
             // 
@@ -116,12 +121,14 @@
             label2.TabIndex = 5;
             label2.Text = "New Password";
             // 
-            // textBox1
+            // txtNewPassword
             // 
-            textBox1.Location = new Point(33, 141);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(456, 23);
-            textBox1.TabIndex = 4;
+            txtNewPassword.Location = new Point(33, 141);
+            txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.Size = new Size(456, 23);
+            txtNewPassword.TabIndex = 4;
+            txtNewPassword.UseSystemPasswordChar = true;
+            txtNewPassword.TextChanged += txtNewPassword_TextChanged;
             // 
             // panel2
             // 
@@ -169,11 +176,11 @@
         private Panel panel2;
         private Label label1;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txtConfirmPassword;
         private Label label2;
-        private TextBox textBox1;
-        private Button button2;
+        private TextBox txtNewPassword;
         private Button button1;
-        private Button button3;
+        private CheckBox checkBox2;
+        private CheckBox checkBox1;
     }
 }

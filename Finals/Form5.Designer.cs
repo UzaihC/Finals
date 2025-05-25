@@ -90,7 +90,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(438, 278);
             panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint;
             // 
             // button1
             // 
@@ -130,10 +129,9 @@
             label2.Font = new Font("OCR A Extended", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(5, 67);
             label2.Name = "label2";
-            label2.Size = new Size(98, 13);
+            label2.Size = new Size(63, 13);
             label2.TabIndex = 3;
-            label2.Text = "Donation Name";
-            label2.Click += label2_Click;
+            label2.Text = "Username";
             // 
             // textBox3
             // 

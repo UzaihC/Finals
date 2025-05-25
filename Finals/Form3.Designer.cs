@@ -28,19 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel1 = new Panel();
-            button4 = new Button();
+            ProfileButton = new Button();
             button3 = new Button();
             button2 = new Button();
             panel2 = new Panel();
+            button1 = new Button();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel3 = new Panel();
-            DATA = new DataGridView();
-            TextSearch = new TextBox();
-            label3 = new Label();
+            DATA = new Guna.UI2.WinForms.Guna2DataGridView();
+            textBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            buttonSearch = new Guna.UI2.WinForms.Guna2Button();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -62,7 +73,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.InactiveCaption;
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(ProfileButton);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Location = new Point(0, 73);
@@ -70,16 +81,16 @@
             panel1.Size = new Size(171, 420);
             panel1.TabIndex = 18;
             // 
-            // button4
+            // ProfileButton
             // 
-            button4.BackColor = Color.DarkKhaki;
-            button4.Location = new Point(43, 33);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 28);
-            button4.TabIndex = 2;
-            button4.Text = "PROFILE";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            ProfileButton.BackColor = Color.DarkKhaki;
+            ProfileButton.Location = new Point(43, 33);
+            ProfileButton.Name = "ProfileButton";
+            ProfileButton.Size = new Size(75, 28);
+            ProfileButton.TabIndex = 2;
+            ProfileButton.Text = "PROFILE";
+            ProfileButton.UseVisualStyleBackColor = false;
+            ProfileButton.Click += button4_Click;
             // 
             // button3
             // 
@@ -107,6 +118,8 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(guna2ControlBox1);
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(pictureBox1);
@@ -115,6 +128,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(812, 77);
             panel2.TabIndex = 19;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ActiveCaption;
+            button1.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(22, 17);
+            button1.Name = "button1";
+            button1.Size = new Size(69, 23);
+            button1.TabIndex = 3;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_2;
             // 
             // label2
             // 
@@ -154,37 +179,110 @@
             // 
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.Controls.Add(DATA);
-            panel3.Controls.Add(TextSearch);
-            panel3.Controls.Add(label3);
-            panel3.Location = new Point(199, 105);
+            panel3.Location = new Point(196, 137);
             panel3.Name = "panel3";
-            panel3.Size = new Size(584, 376);
+            panel3.Size = new Size(587, 344);
             panel3.TabIndex = 20;
             // 
             // DATA
             // 
-            DATA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DATA.Location = new Point(92, 67);
+            dataGridViewCellStyle1.BackColor = Color.White;
+            DATA.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DATA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DATA.ColumnHeadersHeight = 4;
+            DATA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DATA.DefaultCellStyle = dataGridViewCellStyle3;
+            DATA.GridColor = Color.FromArgb(231, 229, 255);
+            DATA.Location = new Point(12, 14);
             DATA.Name = "DATA";
-            DATA.Size = new Size(422, 243);
+            DATA.RowHeadersVisible = false;
+            DATA.Size = new Size(556, 315);
             DATA.TabIndex = 10;
-            DATA.CellContentClick += DATA_CellContentClick;
+            DATA.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            DATA.ThemeStyle.AlternatingRowsStyle.Font = null;
+            DATA.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            DATA.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            DATA.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            DATA.ThemeStyle.BackColor = Color.White;
+            DATA.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            DATA.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            DATA.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            DATA.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            DATA.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            DATA.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DATA.ThemeStyle.HeaderStyle.Height = 4;
+            DATA.ThemeStyle.ReadOnly = false;
+            DATA.ThemeStyle.RowsStyle.BackColor = Color.White;
+            DATA.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DATA.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            DATA.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            DATA.ThemeStyle.RowsStyle.Height = 25;
+            DATA.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            DATA.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DATA.CellContentClick += DATA_CellContentClick_1;
             // 
-            // TextSearch
+            // textBoxSearch
             // 
-            TextSearch.Location = new Point(173, 37);
-            TextSearch.Name = "TextSearch";
-            TextSearch.Size = new Size(94, 23);
-            TextSearch.TabIndex = 9;
+            textBoxSearch.CustomizableEdges = customizableEdges3;
+            textBoxSearch.DefaultText = "";
+            textBoxSearch.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            textBoxSearch.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            textBoxSearch.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            textBoxSearch.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            textBoxSearch.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            textBoxSearch.Font = new Font("Segoe UI", 9F);
+            textBoxSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            textBoxSearch.Location = new Point(196, 106);
+            textBoxSearch.Margin = new Padding(10);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.PlaceholderText = "";
+            textBoxSearch.SelectedText = "";
+            textBoxSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            textBoxSearch.Size = new Size(147, 25);
+            textBoxSearch.TabIndex = 21;
             // 
-            // label3
+            // buttonSearch
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(89, 40);
-            label3.Name = "label3";
-            label3.Size = new Size(78, 15);
-            label3.TabIndex = 8;
-            label3.Text = "Search Donor";
+            buttonSearch.CustomizableEdges = customizableEdges5;
+            buttonSearch.DisabledState.BorderColor = Color.DarkGray;
+            buttonSearch.DisabledState.CustomBorderColor = Color.DarkGray;
+            buttonSearch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            buttonSearch.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            buttonSearch.FillColor = Color.IndianRed;
+            buttonSearch.Font = new Font("Segoe UI", 9F);
+            buttonSearch.ForeColor = Color.White;
+            buttonSearch.Location = new Point(356, 106);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            buttonSearch.Size = new Size(88, 25);
+            buttonSearch.TabIndex = 22;
+            buttonSearch.Text = "Search";
+            // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges1;
+            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(755, 11);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ControlBox1.Size = new Size(45, 29);
+            guna2ControlBox1.TabIndex = 4;
             // 
             // Form3
             // 
@@ -193,6 +291,8 @@
             AutoSize = true;
             BackColor = SystemColors.Control;
             ClientSize = new Size(812, 493);
+            Controls.Add(buttonSearch);
+            Controls.Add(textBoxSearch);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -205,7 +305,6 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DATA).EndInit();
             ResumeLayout(false);
         }
@@ -215,14 +314,16 @@
         private Panel panel1;
         private Button button3;
         private Button button2;
-        private Button button4;
+        private Button ProfileButton;
         private Panel panel2;
         private PictureBox pictureBox1;
         private Panel panel3;
-        private DataGridView DATA;
-        private TextBox TextSearch;
-        private Label label3;
         private Label label1;
         private Label label2;
+        private Button button1;
+        private Guna.UI2.WinForms.Guna2DataGridView DATA;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxSearch;
+        private Guna.UI2.WinForms.Guna2Button buttonSearch;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }

@@ -1,32 +1,67 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Finals
 {
     public partial class Password : Form
     {
-        public Password()
+
+        private string username;
+
+        public Password(string user)
         {
             InitializeComponent();
+            username = user;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 Form1 = new Form1();
-            Form1.Show();
-            this.Hide();
+            string newPassword = txtNewPassword.Text.Trim();
+            string confirmPassword = txtConfirmPassword.Text.Trim();
+
+            if (newPassword != confirmPassword)
+            {
+                MessageBox.Show("Passwords do not match. Try again.");
+                return;
+            }
+
+            username = username.Trim();
+
+            Classconnection conn = new Classconnection();
+            bool success = conn.UpdatePassword(username, newPassword);
+
+            if (success)
+            {
+                MessageBox.Show($"Password updated successfully for user: {username}!");
+                this.Hide();
+                Form1 loginform = new Form1();
+                loginform.Show();
+            }
+            else
+            {
+                MessageBox.Show($"Failed to update password for: {username}. Double check if user exists.");
+            }
         }
+
 
         private void Password_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtNewPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtNewPassword.PasswordChar = '•';
+        }
+
+        private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtConfirmPassword.PasswordChar = '•';
         }
     }
 }

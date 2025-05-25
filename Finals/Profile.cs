@@ -12,47 +12,35 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Finals
 {
+
     public partial class Profile : Form
     {
-        private string DonorName;
+        private string CurrentUsername;
         Classconnection connect = new Classconnection();
-        public Profile(string donorName)
+        public Profile(string username)
         {
             InitializeComponent();
-           
-            this.DonorName = donorName;
-        }
+            CurrentUsername = username;
 
+        }
         private void Profile_Load(object sender, EventArgs e)
         {
-            Greetings.Text = $"Welcome";
-            SearchDonor("dean");
-            LoadDonations();
+            LabelUsername.Text = CurrentUsername; // Display username
+            LoadUsersDonations();
         }
 
-        private void LoadDonations()
+        private void LoadUsersDonations()
         {
-            string connString = "server=localhost;user=root;database=loglog;SslMode=None;";
-            string query = "SELECT donor FROM donations WHERE donor = @donor";
-
-            using (MySqlConnection conn = new MySqlConnection(connString))
+            using (MySqlConnection conn = new MySqlConnection(connect.GetConnectionString()))
             {
-                try
-                {
-                    conn.Open();
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@donor", DonorName);
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    DATA2.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading donation history: " + ex.Message);
-                }
+                conn.Open();
+                string query = "SELECT donor, amount, recipient, donation_date FROM donations WHERE donor = @donor";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@donor", CurrentUsername);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                DATA2.DataSource = table;
             }
         }
 
@@ -73,7 +61,7 @@ namespace Finals
                         {
                             if (reader.Read())
                             {
-                                donorName.Text = reader["donor"].ToString();
+                                LabelUsername.Text = reader["donor"].ToString();
                                 
                             }
                             else
@@ -102,9 +90,9 @@ namespace Finals
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form3 form3 = new Form3(Session.currentUsername);
+            form3.Show();
             this.Hide();
-            Form3 form3 = new Form3();
-            this.Show();
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -121,5 +109,7 @@ namespace Finals
         {
 
         }
+        
     }
+    
 }

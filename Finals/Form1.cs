@@ -1,3 +1,5 @@
+using System;
+
 namespace Finals
 {
     public partial class Form1 : Form
@@ -14,38 +16,24 @@ namespace Finals
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string EmailL = LogEmail.Text;
 
-            string PassL = LogPass.Text;
+            string Username = LogUser.Text;
+            string Password = LogPass.Text;
             Classconnection conn = new Classconnection();
-            if (conn.ValidateLogin(EmailL, PassL))
+            if (conn.ValidateLogin(Username, Password))
             {
+                Session.currentUsername = Username;
                 MessageBox.Show("Login Succesfully!!");
+                this.Hide();
+                Form4 optionsform = new Form4();
+                optionsform.Show();
+
             }
             else
             {
                 MessageBox.Show("Invalid Username!!");
             }
-
-            bool isValidUser = true;
-
-            if (isValidUser)
-            {
-                Form4 optionsForm = new Form4();
-                optionsForm.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.");
-            }
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
@@ -65,12 +53,26 @@ namespace Finals
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Password Pass = new Password();
-            Pass.Show();
+            OTP otpform = new OTP();
+            otpform.Show();
             this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            LogPass.PasswordChar = '•';
+        }
+
+        private void LogPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void showPass_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogEmail_TextChanged_1(object sender, EventArgs e)
         {
 
         }

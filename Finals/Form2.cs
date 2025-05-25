@@ -39,6 +39,7 @@ namespace Finals
             this.Hide();
             Classconnection conn = new Classconnection();
             string Email = EmailT.Text;
+
             string Password = PassW.Text;
             if (conn.UserExists(Email))
             {
@@ -58,10 +59,20 @@ namespace Finals
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            PassW.PasswordChar = '•';
         }
 
         private void EmailT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showPass2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogEmail2_TextChanged(object sender, EventArgs e)
         {
 
         }
