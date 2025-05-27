@@ -38,5 +38,20 @@ namespace Finals
         {
             timer1.Start();
         }
+
+        private void prog_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lolo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

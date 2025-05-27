@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -35,14 +37,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel1 = new Panel();
             ProfileButton = new Button();
             button3 = new Button();
             button2 = new Button();
             panel2 = new Panel();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             button1 = new Button();
             label2 = new Label();
             label1 = new Label();
@@ -51,7 +52,6 @@
             DATA = new Guna.UI2.WinForms.Guna2DataGridView();
             textBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             buttonSearch = new Guna.UI2.WinForms.Guna2Button();
-            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -65,7 +65,7 @@
             guna2HtmlLabel1.Font = new Font("OCR A Extended", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.Location = new Point(261, 12);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(323, 31);
+            guna2HtmlLabel1.Size = new Size(423, 37);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "LEVELING CORPORATION";
             guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
@@ -76,17 +76,19 @@
             panel1.Controls.Add(ProfileButton);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
-            panel1.Location = new Point(0, 73);
+            panel1.Location = new Point(0, 97);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(171, 420);
+            panel1.Size = new Size(195, 560);
             panel1.TabIndex = 18;
             // 
             // ProfileButton
             // 
             ProfileButton.BackColor = Color.DarkKhaki;
-            ProfileButton.Location = new Point(43, 33);
+            ProfileButton.Location = new Point(49, 44);
+            ProfileButton.Margin = new Padding(3, 4, 3, 4);
             ProfileButton.Name = "ProfileButton";
-            ProfileButton.Size = new Size(75, 28);
+            ProfileButton.Size = new Size(86, 37);
             ProfileButton.TabIndex = 2;
             ProfileButton.Text = "PROFILE";
             ProfileButton.UseVisualStyleBackColor = false;
@@ -95,9 +97,10 @@
             // button3
             // 
             button3.BackColor = Color.DarkKhaki;
-            button3.Location = new Point(43, 241);
+            button3.Location = new Point(49, 321);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(86, 31);
             button3.TabIndex = 1;
             button3.Text = "ABOUT";
             button3.UseVisualStyleBackColor = false;
@@ -107,9 +110,10 @@
             // 
             button2.BackColor = Color.DarkKhaki;
             button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(43, 270);
+            button2.Location = new Point(49, 360);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(86, 31);
             button2.TabIndex = 0;
             button2.Text = "LOGOUT";
             button2.UseVisualStyleBackColor = false;
@@ -125,17 +129,32 @@
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(812, 77);
+            panel2.Size = new Size(928, 103);
             panel2.TabIndex = 19;
+            // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges1;
+            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(863, 15);
+            guna2ControlBox1.Margin = new Padding(3, 4, 3, 4);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ControlBox1.Size = new Size(51, 39);
+            guna2ControlBox1.TabIndex = 4;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.ActiveCaption;
             button1.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(22, 17);
+            button1.Location = new Point(25, 23);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(69, 23);
+            button1.Size = new Size(79, 31);
             button1.TabIndex = 3;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = false;
@@ -146,9 +165,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("OCR A Extended", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Image = Properties.Resources.dean1;
-            label2.Location = new Point(343, 38);
+            label2.Location = new Point(392, 51);
             label2.Name = "label2";
-            label2.Size = new Size(188, 17);
+            label2.Size = new Size(226, 23);
             label2.TabIndex = 2;
             label2.Text = "DONATION DASHBOARD";
             // 
@@ -158,9 +177,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("OCR A Extended", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Image = Properties.Resources.dean1;
-            label1.Location = new Point(265, 9);
+            label1.Location = new Point(303, 12);
             label1.Name = "label1";
-            label1.Size = new Size(333, 29);
+            label1.Size = new Size(435, 35);
             label1.TabIndex = 1;
             label1.Text = "LEVELING CORPORATION";
             // 
@@ -169,8 +188,9 @@
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Image = Properties.Resources.dean1;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(812, 77);
+            pictureBox1.Size = new Size(928, 103);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -179,9 +199,10 @@
             // 
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.Controls.Add(DATA);
-            panel3.Location = new Point(196, 137);
+            panel3.Location = new Point(224, 152);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(587, 344);
+            panel3.Size = new Size(671, 490);
             panel3.TabIndex = 20;
             // 
             // DATA
@@ -207,10 +228,13 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             DATA.DefaultCellStyle = dataGridViewCellStyle3;
             DATA.GridColor = Color.FromArgb(231, 229, 255);
-            DATA.Location = new Point(12, 14);
+            DATA.Location = new Point(14, 24);
+            DATA.Margin = new Padding(3, 4, 3, 4);
             DATA.Name = "DATA";
             DATA.RowHeadersVisible = false;
-            DATA.Size = new Size(556, 315);
+            DATA.RowHeadersWidth = 51;
+            DATA.RowTemplate.Height = 25;
+            DATA.Size = new Size(639, 446);
             DATA.TabIndex = 10;
             DATA.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             DATA.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -246,13 +270,13 @@
             textBoxSearch.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             textBoxSearch.Font = new Font("Segoe UI", 9F);
             textBoxSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textBoxSearch.Location = new Point(196, 106);
-            textBoxSearch.Margin = new Padding(10);
+            textBoxSearch.Location = new Point(224, 111);
+            textBoxSearch.Margin = new Padding(11, 13, 11, 13);
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.PlaceholderText = "";
             textBoxSearch.SelectedText = "";
             textBoxSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            textBoxSearch.Size = new Size(147, 25);
+            textBoxSearch.Size = new Size(168, 33);
             textBoxSearch.TabIndex = 21;
             // 
             // buttonSearch
@@ -265,38 +289,29 @@
             buttonSearch.FillColor = Color.IndianRed;
             buttonSearch.Font = new Font("Segoe UI", 9F);
             buttonSearch.ForeColor = Color.White;
-            buttonSearch.Location = new Point(356, 106);
+            buttonSearch.Location = new Point(407, 111);
+            buttonSearch.Margin = new Padding(3, 4, 3, 4);
             buttonSearch.Name = "buttonSearch";
             buttonSearch.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            buttonSearch.Size = new Size(88, 25);
+            buttonSearch.Size = new Size(101, 33);
             buttonSearch.TabIndex = 22;
             buttonSearch.Text = "Search";
-            // 
-            // guna2ControlBox1
-            // 
-            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.CustomizableEdges = customizableEdges1;
-            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
-            guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(755, 11);
-            guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2ControlBox1.Size = new Size(45, 29);
-            guna2ControlBox1.TabIndex = 4;
+            buttonSearch.Click += buttonSearch_Click;
             // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(812, 493);
+            ClientSize = new Size(928, 657);
             Controls.Add(buttonSearch);
             Controls.Add(textBoxSearch);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form3";
             Text = "Form3";
             Load += Form3_Load_1;

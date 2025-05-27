@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Net.Mail;
+using System.Net;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
@@ -112,7 +114,7 @@ namespace Finals
                 }
             }
         }
-
+        
 
     }
 }

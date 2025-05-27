@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Finals
 {
@@ -21,14 +22,14 @@ namespace Finals
         }
         private void Form5_Load(object sender, EventArgs e)
         {
-            textBox1.Text = currentUsername;
-            textBox1.ReadOnly = true;
+            txtEmail.Text = currentUsername;
+            txtEmail.ReadOnly = true;
         }
         private void button1_Click(object sender, EventArgs e)
         {
             string donor = currentUsername;
-            string amount = textBox2.Text;
-            string recipient = textBox3.Text;
+            string amount = txtAmount.Text;
+            string recipient = txtRecipient.Text;
             DateTime donationDate = DateTime.Now;
 
             string connString = "server=localhost;user=root;database=loglog;";
@@ -53,6 +54,7 @@ namespace Finals
             Form3 donationForm = new Form3(currentUsername);
             donationForm.Show();
             this.Hide();
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -73,6 +75,11 @@ namespace Finals
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void receiptBox_CheckedChanged(object sender, EventArgs e)
         {
 
         }

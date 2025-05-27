@@ -36,8 +36,8 @@
             prog = new Guna.UI2.WinForms.Guna2ProgressBar();
             Lolo = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel1 = new Panel();
-            guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             pictureBox1 = new PictureBox();
+            guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -55,46 +55,53 @@
             // prog
             // 
             prog.CustomizableEdges = customizableEdges1;
-            prog.Location = new Point(-1, 176);
+            prog.Location = new Point(-1, 235);
+            prog.Margin = new Padding(3, 4, 3, 4);
             prog.Name = "prog";
             prog.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            prog.Size = new Size(246, 30);
+            prog.Size = new Size(281, 40);
             prog.TabIndex = 0;
             prog.Text = "guna2ProgressBar1";
             prog.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            prog.ValueChanged += prog_ValueChanged;
             // 
             // Lolo
             // 
             Lolo.BackColor = Color.Transparent;
-            Lolo.Location = new Point(114, 153);
+            Lolo.Location = new Point(130, 204);
+            Lolo.Margin = new Padding(3, 4, 3, 4);
             Lolo.Name = "Lolo";
-            Lolo.Size = new Size(19, 17);
+            Lolo.Size = new Size(23, 22);
             Lolo.TabIndex = 1;
             Lolo.Text = "0%";
+            Lolo.Click += Lolo_Click;
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveBorder;
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(9, 7);
+            panel1.Location = new Point(10, 9);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(224, 140);
+            panel1.Size = new Size(256, 187);
             panel1.TabIndex = 2;
-            // 
-            // guna2Elipse1
-            // 
-            guna2Elipse1.BorderRadius = 30;
-            guna2Elipse1.TargetControl = panel1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.dean5;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(224, 140);
+            pictureBox1.Size = new Size(256, 187);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // guna2Elipse1
+            // 
+            guna2Elipse1.BorderRadius = 30;
+            guna2Elipse1.TargetControl = panel1;
             // 
             // guna2Elipse2
             // 
@@ -103,13 +110,14 @@
             // 
             // Loading
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(245, 204);
+            ClientSize = new Size(280, 272);
             Controls.Add(panel1);
             Controls.Add(Lolo);
             Controls.Add(prog);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Loading";
             Text = "Loading";
             Load += Loading_Load;
