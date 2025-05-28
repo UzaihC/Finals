@@ -52,18 +52,16 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(14, 16);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(887, 547);
+            panel1.Size = new Size(776, 410);
             panel1.TabIndex = 0;
             // 
             // button2
             // 
-            button2.Location = new Point(381, 501);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(333, 376);
             button2.Name = "button2";
-            button2.Size = new Size(130, 33);
+            button2.Size = new Size(114, 25);
             button2.TabIndex = 3;
             button2.Text = "GO BACK";
             button2.UseVisualStyleBackColor = true;
@@ -72,10 +70,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logolevel;
-            pictureBox1.Location = new Point(556, 114);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(460, 71);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(311, 307);
+            pictureBox1.Size = new Size(313, 278);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
@@ -89,20 +86,18 @@
             panel2.Controls.Add(txtRecipient);
             panel2.Controls.Add(txtAmount);
             panel2.Controls.Add(txtEmail);
-            panel2.Location = new Point(18, 95);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(16, 71);
             panel2.Name = "panel2";
-            panel2.Size = new Size(501, 371);
+            panel2.Size = new Size(438, 278);
             panel2.TabIndex = 1;
             // 
             // button1
             // 
             button1.BackColor = Color.OrangeRed;
             button1.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(62, 222);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(54, 166);
             button1.Name = "button1";
-            button1.Size = new Size(354, 80);
+            button1.Size = new Size(310, 60);
             button1.TabIndex = 6;
             button1.Text = "MAKE THE DONATION";
             button1.UseVisualStyleBackColor = false;
@@ -112,9 +107,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("OCR A Extended", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(17, 147);
+            label4.Location = new Point(15, 110);
             label4.Name = "label4";
-            label4.Size = new Size(89, 17);
+            label4.Size = new Size(70, 13);
             label4.TabIndex = 5;
             label4.Text = "Recipient";
             // 
@@ -122,9 +117,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("OCR A Extended", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(17, 89);
+            label3.Location = new Point(15, 67);
             label3.Name = "label3";
-            label3.Size = new Size(62, 17);
+            label3.Size = new Size(49, 13);
             label3.TabIndex = 4;
             label3.Text = "Amount";
             // 
@@ -132,36 +127,33 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("OCR A Extended", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(17, 28);
+            label2.Location = new Point(15, 21);
             label2.Name = "label2";
-            label2.Size = new Size(98, 17);
+            label2.Size = new Size(77, 13);
             label2.TabIndex = 3;
             label2.Text = "Your Email";
             // 
             // txtRecipient
             // 
-            txtRecipient.Location = new Point(17, 171);
-            txtRecipient.Margin = new Padding(3, 4, 3, 4);
+            txtRecipient.Location = new Point(15, 128);
             txtRecipient.Name = "txtRecipient";
-            txtRecipient.Size = new Size(445, 27);
+            txtRecipient.Size = new Size(390, 23);
             txtRecipient.TabIndex = 2;
             txtRecipient.TextChanged += textBox3_TextChanged;
             // 
             // txtAmount
             // 
-            txtAmount.Location = new Point(17, 113);
-            txtAmount.Margin = new Padding(3, 4, 3, 4);
+            txtAmount.Location = new Point(15, 85);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(445, 27);
+            txtAmount.Size = new Size(390, 23);
             txtAmount.TabIndex = 1;
             txtAmount.TextChanged += textBox2_TextChanged;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(17, 52);
-            txtEmail.Margin = new Padding(3, 4, 3, 4);
+            txtEmail.Location = new Point(15, 39);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(445, 27);
+            txtEmail.Size = new Size(390, 23);
             txtEmail.TabIndex = 0;
             txtEmail.TextChanged += textBox1_TextChanged;
             // 
@@ -169,21 +161,20 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("OCR A Extended", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(282, 0);
+            label1.Location = new Point(247, 0);
             label1.Name = "label1";
-            label1.Size = new Size(317, 29);
+            label1.Size = new Size(257, 23);
             label1.TabIndex = 0;
             label1.Text = "WELCOME TO DONATION";
             // 
             // Form5
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.pngtree_youth_geometric_gradient_architectural_silhouette_inspirational_picture_image_976352;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form5";
             Text = "Form5";
             Load += Form5_Load;

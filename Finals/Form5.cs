@@ -27,10 +27,12 @@ namespace Finals
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            string email = txtEmail.Text;
             string donor = currentUsername;
             string amount = txtAmount.Text;
             string recipient = txtRecipient.Text;
             DateTime donationDate = DateTime.Now;
+            Email.SendReceipt(email, currentUsername, amount, recipient);
 
             string connString = "server=localhost;user=root;database=loglog;";
 
@@ -54,7 +56,9 @@ namespace Finals
             Form3 donationForm = new Form3(currentUsername);
             donationForm.Show();
             this.Hide();
-            
+
+
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
